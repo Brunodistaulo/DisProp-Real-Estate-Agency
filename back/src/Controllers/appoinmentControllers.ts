@@ -1,26 +1,31 @@
-//* /appointments
-//* GET /appointments => Obtener el listado de todos los turnos de todos los usuarios.
-//* GET /appointment => Obtener el detalle de un turno específico.
-//* POST /appointment/schedule => Agendar un nuevo turno.
-//* PUT /appointment/cancel => Cambiar el estatus de un turno a “cancelled”.
 import { Request, Response } from "express";
+import { cancelAppointmentService, createApppointment, getAppointmentByIdService, getAppointmentsByUserId, getAppointmentsService } from "../Service/appointmentService";
 
 export const getAppointments = async (req: Request, res: Response): Promise<void> => {
-
-    res.status(200).send("ahi tenes todos los appointments pa")
+    const getAppointments = await getAppointmentsService()
+    res.status(200).json(getAppointments)
 }
 
 export const getOneAppointment = async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.params
+    const getAppointment = await getAppointmentByIdService(Number(id))
+    res.status(200).json(getAppointment)
+}
 
-    res.status(200).send("ahi tenes un appointment pa")
+export const getAppointmentByUser = async (req: Request, res: Response): Promise<void> => {
+    const {id} = req.params
+    const getOneAppointmentById = await getAppointmentsByUserId(Number(id));
+    res.status(200).json(getOneAppointmentById);
 }
 
 export const scheduleAppointment = async (req: Request, res: Response): Promise<void> => {
-
-    res.status(200).send("ahi tenes el cronograma de un appointment pa")
+    const {date, time, userId} = req.body
+    const newAppointment = await createApppointment({date,time},userId)
+    res.status(200).json(newAppointment)
 }
 
 export const cancelAppointment = async (req: Request, res: Response): Promise<void> => {
-
-    res.status(200).send("se canceló un appointment pa")
+    const {id} = req.params
+    const cancelAppointment = await cancelAppointmentService(Number(id))
+    res.status(200).json(cancelAppointment)
 } 
