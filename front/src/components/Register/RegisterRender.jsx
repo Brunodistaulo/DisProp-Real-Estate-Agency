@@ -11,24 +11,25 @@ const Register = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
 
-        setUserData({...userData, [name]: value});
-
-        const error= registerValidation(userData);
-        setErrors(error);
+        setUserData((prevData)=>{
+            const updatedData = {...prevData, [name]: value};
+            const validationErrors = registerValidation(updatedData);
+            setErrors(validationErrors);
+            return updatedData;
+        });
         };
-    
     
         
     
-    const handleSubtmit= (event) => {
+    const handleSubmit= async (event) => {
         event.preventDefault();
         if(Object.keys(errors).length === 0){
-            axios.post("http://localhost:3000/users/register", userData)
+           await axios.post("http://localhost:3000/users/register", userData)
             .then(() => {
-                alert ("Register successfully");
+                alert ("Registrado con éxito");
             }).catch (() => {
-                alert ("Error Register");
-            })  
+                alert ("Error al registrar usuario");
+            })
         }   
     }
 
@@ -36,7 +37,7 @@ const Register = () => {
     return (
         <div>
             <h1>Register</h1>
-            <form onSubmit={handleSubtmit}>
+            <form onSubmit={handleSubmit}>
             <div>
                 <label>Name: </label>
                 <input type="text" name="name" value={userData.name} onChange={handleChange} />

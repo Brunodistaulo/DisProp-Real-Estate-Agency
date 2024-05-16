@@ -1,8 +1,9 @@
+import HomeRender from "../components/Home/HomeRender";
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <HomeRender />
         </div>
     );
 }
