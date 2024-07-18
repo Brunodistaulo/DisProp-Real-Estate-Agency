@@ -14,7 +14,7 @@ const MisTurnos = () => {
 
     useEffect(() => {
         if (user.id) {
-            axios.get(`http://localhost:3000/appointments/user/${user.id}`)
+            axios.get(`http://localhost:3005/appointments/user/${user.id}`)
             .then(res => dispatch(addAppointment(res.data)))
         }else{
                 navigate("/");
@@ -22,7 +22,7 @@ const MisTurnos = () => {
         }, []);
     
     const handleCancel = async () => {
-       await axios.get(`http://localhost:3000/appointments/user/${user.id}`)
+       await axios.get(`http://localhost:3005/appointments/user/${user.id}`)
         .then(res => dispatch(addAppointment(res.data)))
         .catch(()=> alert("Error al cargar los turnos"))
     }
@@ -33,7 +33,6 @@ const MisTurnos = () => {
             <DivCustom>
             {
                 turnos.map(turno => {
-                    
                     return <Turno key={turno.id} Turno={turno} onCancel={handleCancel}/>
                 })
             }

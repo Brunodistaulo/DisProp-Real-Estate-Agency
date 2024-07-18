@@ -24,7 +24,7 @@ const Register = () => {
     const handleSubmit= async (event) => {
         event.preventDefault();
         if(Object.keys(errors).length === 0){
-           await axios.post("http://localhost:3000/users/register", userData)
+           await axios.post("http://localhost:3005/users/register", userData)
             .then(() => {
                 alert ("Registrado con éxito");
             }).catch (() => {

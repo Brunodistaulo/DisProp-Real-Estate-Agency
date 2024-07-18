@@ -26,7 +26,7 @@ const CreateAppointment = () => {
     }
     const handleSubmitTurn = async (e)=>{
         e.preventDefault()
-        await axios.post("http://localhost:3000/appointments/schedule",{
+        await axios.post("http://localhost:3005/appointments/schedule",{
             ...turnData,
             userId: userId
         })
