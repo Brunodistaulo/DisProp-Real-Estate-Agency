@@ -5,12 +5,15 @@ import Turno from "../components/Turno/Turn";
 import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addAppointment } from "../redux/reducer";
+
 const MisTurnos = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
     const turnos =  user.userAppointment
+
+
 
     useEffect(() => {
         if (user.id) {

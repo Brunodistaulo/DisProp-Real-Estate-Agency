@@ -14,7 +14,7 @@ export const getAppointmentByIdService = (id: number)=> {
   return appointment;
 };
 
-export const getAppointmentsByUserId = async (userId: number) => {
+export const getAppointmentsByUserId = async (userId: string) => {
   const appointmentId = await AppointmentsModel.find({where: {user: {id: userId}}});
   if(!appointmentId){
     throw new Error ("Appointment not found");
@@ -22,9 +22,9 @@ export const getAppointmentsByUserId = async (userId: number) => {
   return appointmentId;
 }
 
-export const createApppointment = async (newAppointment: appointmentDto, userId: number) => {
-
-  const { date, time} = newAppointment;
+export const createApppointment = async (newAppointment: appointmentDto, userId: string) => {
+  console.log("llega aqui pa")
+  const { date, time, Localidad, Propiedades } = newAppointment;
   
   const userChecked = await UserModel.findOne({where: {id: userId}});
 
@@ -34,6 +34,8 @@ export const createApppointment = async (newAppointment: appointmentDto, userId:
   const newAppointmentCreated = AppointmentsModel.create({
     date,
     time,
+    Localidad,
+    Propiedades,
     user: userChecked
   });
   

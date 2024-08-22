@@ -16,7 +16,13 @@ export class Appointments {
     @Column()
     time: string;
     
-    
+
+    @Column()
+    Propiedades: string;
+
+    @Column()
+    Localidad: string;
+
     @Column({default: "active"})
     status: "active" | "cancelled";
     

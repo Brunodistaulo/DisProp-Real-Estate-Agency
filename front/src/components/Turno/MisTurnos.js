@@ -6,11 +6,17 @@ export const DivCustom = styled.div`
   margin: 0 auto;
   justify-content: center;
   max-width: 1200px;
-  gap: 1.5rem;
+  gap: 30px;
 `;
 
 
 export const H1Turn = styled.h1`
-    margin-left: 120px;
-    font-weight: 500;
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 32px;
+    padding: 8px 0 20px 0;
+    color: white;
+    letter-spacing: 10px;
+    text-transform: uppercase;
 `;

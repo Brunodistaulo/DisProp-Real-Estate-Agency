@@ -1,5 +1,5 @@
 interface credentialsDto{
-    username: string;
+    email: string;
     password: string;
 }
 

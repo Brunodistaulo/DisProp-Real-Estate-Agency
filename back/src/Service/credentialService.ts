@@ -1,16 +1,16 @@
 import { CredentialsModel } from "../Config/data-source";
 
-export const createCredentials = async (username: string, password: string) => {
-  const credentialsUser = await CredentialsModel.create({ username, password });
+export const createCredentials = async (email: string, password: string) => {
+  const credentialsUser = await CredentialsModel.create({ email, password });
   const result = await CredentialsModel.save(credentialsUser);
-  return result.id;
+  return result;
 };
 
-export const credentialValidation = async (username: string,password: string) => {
-  const credentialsUser = await CredentialsModel.findOne({where: { username, password }});
+export const credentialValidation = async (email: string,password: string) => {
+  const credentialsUser = await CredentialsModel.findOne({where: { email, password }});
   if (!credentialsUser) {
     throw new Error("Credenciales incorrectas");
   }else{
-    return credentialsUser;
+    return credentialsUser.id;
   }
 };

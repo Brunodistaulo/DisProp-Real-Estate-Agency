@@ -6,6 +6,6 @@ import { AppDataSource } from "./Config/data-source";
 
 
 AppDataSource.initialize().then(() => {
-    server.listen(PORT, () => console.log("Server running on port 3000"))
+    server.listen(3005, () => console.log("Server running on port 3005"))
 })
 

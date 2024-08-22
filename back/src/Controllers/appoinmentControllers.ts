@@ -14,13 +14,13 @@ export const getOneAppointment = async (req: Request, res: Response): Promise<vo
 
 export const getAppointmentByUser = async (req: Request, res: Response): Promise<void> => {
     const {id} = req.params
-    const getOneAppointmentById = await getAppointmentsByUserId(Number(id));
+    const getOneAppointmentById = await getAppointmentsByUserId(id);
     res.status(200).json(getOneAppointmentById);
 }
 
 export const scheduleAppointment = async (req: Request, res: Response): Promise<void> => {
-    const {date, time, userId} = req.body
-    const newAppointment = await createApppointment({date,time},userId)
+    const {date, time, Propiedades, Localidad, userId} = req.body
+    const newAppointment = await createApppointment({date,time, Localidad, Propiedades},userId)
     res.status(200).json(newAppointment)
 }
 

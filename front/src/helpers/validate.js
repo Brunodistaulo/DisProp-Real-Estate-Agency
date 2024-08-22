@@ -5,16 +5,11 @@ const registerValidation = (input) => {
     errors.name = "El nombre es requerido";
   }
   // EMAIL
-  if (!input.email) {
-    errors.email = "El email es requerido";
-  } else if (!/\S+@\S+.\S+/.test(input.email)) {
-    errors.email = "El email no es valido";
+  if (!input.NewEmail) {
+    errors.NewEmail = "El email es requerido";
+  } else if (!/\S+@\S+.\S+/.test(input.NewEmail)) {
+    errors.NewEmail = "El email no es valido";
   }
-  // BIRTHDATE
-  if (!input.birthdate) {
-    errors.birthdate = "La fecha de nacimiento es requerida";
-  }
-
   // DNI
   if (!input.nDni) {
     errors.nDni = "El DNI es requerido";

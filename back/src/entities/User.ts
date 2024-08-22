@@ -1,13 +1,14 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, OneToMany  } from "typeorm";
 import { Credentials } from "./Credentials";
 import { Appointments } from "./Appointments";
+import { v4 as uuid } from "uuid";
 
 @Entity({
   name: "users",
 })
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string = uuid();
 
   @Column({length: 100,})
   name: string;
@@ -15,15 +16,12 @@ export class User {
   @Column()
   email: string;
   
-  @Column()
-  birthdate: Date;
-
   @Column("integer")
   nDni: number;
 
   @OneToOne(() => Credentials)
   @JoinColumn()
-  credentialsId: Credentials;
+  credentials: Credentials;
 
   @OneToMany(() => Appointments, (appointments) => appointments.user)
   appointments: Appointments[];

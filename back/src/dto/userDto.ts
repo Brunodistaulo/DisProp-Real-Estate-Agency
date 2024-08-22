@@ -1,7 +1,6 @@
 interface UserDto {
     "name": string,
-    "email": string,
-    "birthdate": string,
+    "NewEmail": string,
     "nDni": number
 }
 
