@@ -27,7 +27,7 @@ const HomeRender = () => {
         <div className=" h-full">
           <div className="float-right h-full w-[70%]">
             <img
-              src="src/assets/casahome.jpg"
+              src="http://res.cloudinary.com/dacebahmf/image/upload/v1725324843/novfobrz9wmpwgxj4zvj.jpg"
               className="h-full w-full"
               alt="Casa logo"
             />
@@ -47,7 +47,7 @@ const HomeRender = () => {
       <div className="flex justify-center gap-24 my-32">
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure>
-            <img className="h-72" src="src/assets/casa1.jpg" alt="Shoes" />
+            <img className="h-72" src="http://res.cloudinary.com/dacebahmf/image/upload/v1725325974/g29bblmeg6zspeneszeh.jpg" alt="Residencial Vista del Sol" />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-white">Residencial Vista del Sol</h2>
@@ -97,7 +97,7 @@ const HomeRender = () => {
         </div>
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure>
-            <img className="h-72" src="src/assets/casa2.webp" alt="Shoes" />
+            <img className="h-72" src="http://res.cloudinary.com/dacebahmf/image/upload/v1725326013/if9zmrjfbmmigbzqcl36.webp" alt="Condominio Brisas del Mar" />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-white">Condominio Brisas del Mar</h2>
@@ -147,7 +147,7 @@ const HomeRender = () => {
         </div>
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure>
-            <img className="h-72" src="src/assets/casa3.jpg" alt="Shoes" />
+            <img className="h-72" src="http://res.cloudinary.com/dacebahmf/image/upload/v1725326044/fqm9teeoqqvgqvrotjvk.jpg" alt="Hacienda Los Robles" />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-white">Hacienda Los Robles</h2>

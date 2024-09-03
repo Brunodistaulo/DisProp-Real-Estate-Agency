@@ -16,7 +16,7 @@ const Turno = ({Turno, onCancel}) => {
     return (
         <DivTurn>
             <Figure>
-                <ImgTurn src="src/assets/logo/snow-scenery.jpg"/>
+                <ImgTurn src="http://res.cloudinary.com/dacebahmf/image/upload/v1725326333/xk9hutcuakhgsxjaso4z.jpg"/>
             </Figure>
             <ArticlePreview>
             <Titles>Nro. Turno: {id}</Titles>

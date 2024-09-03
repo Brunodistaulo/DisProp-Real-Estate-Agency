@@ -69,7 +69,7 @@ const Register = () => {
     <div>
       <DivCustom>
         <DivImg>
-          <img src="src/assets/logo/snow-scenery.jpg" alt="Casa logo" />
+          <img src="http://res.cloudinary.com/dacebahmf/image/upload/v1725326333/xk9hutcuakhgsxjaso4z.jpg" alt="Casa logo" />
         </DivImg>
         <DivForm>
           <form onSubmit={handleSubmit}>
