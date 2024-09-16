@@ -55,7 +55,7 @@ const Register = () => {
     event.preventDefault();
     if (Object.keys(errors).length === 0) {
       await axios
-        .post("${process.env.NEXT_PUBLIC_API_URL}/users/register", userData)
+        .post(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, userData)
         .then(() => {
           alert("Registrado con éxito");
         })
