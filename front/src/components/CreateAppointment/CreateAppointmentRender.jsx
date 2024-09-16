@@ -49,7 +49,7 @@ const CreateAppointment = () => {
   const handleSubmitTurn = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3005/appointments/schedule", {
+      await axios.post("${process.env.NEXT_PUBLIC_API_URL}/appointments/schedule", {
         ...turnData,
         userId: userId,
       });

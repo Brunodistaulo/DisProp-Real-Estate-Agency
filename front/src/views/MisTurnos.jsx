@@ -17,7 +17,7 @@ const MisTurnos = () => {
 
     useEffect(() => {
         if (user.id) {
-            axios.get(`http://localhost:3005/appointments/user/${user.id}`)
+            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/appointments/user/${user.id}`)
             .then(res => dispatch(addAppointment(res.data)))
         }else{
                 navigate("/");
@@ -25,7 +25,7 @@ const MisTurnos = () => {
         }, []);
     
     const handleCancel = async () => {
-       await axios.get(`http://localhost:3005/appointments/user/${user.id}`)
+       await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/appointments/user/${user.id}`)
         .then(res => dispatch(addAppointment(res.data)))
         .catch(()=> alert("Error al cargar los turnos"))
     }

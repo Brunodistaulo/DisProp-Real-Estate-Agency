@@ -6,7 +6,7 @@ const Turno = ({Turno, onCancel}) => {
     const fecha = Turno.date.split('T')[0];
 
     const HandleOnCancel = async () => {
-        await axios.put(`http://localhost:3005/appointments/cancel/${id}`)
+        await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/appointments/cancel/${id}`)
         .then(() => {
             alert("turno cancelado nasheeeee");
             onCancel();
